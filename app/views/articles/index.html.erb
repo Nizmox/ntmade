@@ -1,0 +1,18 @@
+<h2>Articles</h2>
+
+<%= link_to 'Create Article', new_article_path %>
+
+<% @articles.each do |article| %>
+<ul>
+  <li><b>Title: </b><%= article.title %></li>
+  <li><b>Content: </b><%= article.content %></li>
+  <li><b>Caption: </b><%= article.caption %></li>
+  <li>
+    <b>Admin: </b>
+    <%= link_to 'edit', edit_article_path(article) %>
+    <%= link_to 'delete', article_path(article), :method => 'delete' , :confirm => 'Are you sure?' %>
+  </li>
+</ul>
+<% end %>
+
+<%= link_to 'Back', home_path %>
