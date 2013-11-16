@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(permitted_params)
+    @article = current_admin.articles.new(permitted_params)
 
     if @article.save 
       redirect_to '/articles'

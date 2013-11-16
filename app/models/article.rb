@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
-  #belongs_to :admin
+  #an article is created by an admin
+  belongs_to :admin
 
   validates :title, :presence => true
   validates :content, :presence => true

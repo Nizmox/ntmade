@@ -4,4 +4,7 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, 
          #:registerable, #do not allow user signups
          :recoverable, :rememberable, :trackable, :validatable
+
+  #an admin can create many articles
+  has_many :articles
 end
