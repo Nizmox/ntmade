@@ -8,6 +8,24 @@
 </head>
 <body>
 
+  <!-- Added for Devise -->
+  <% if admin_signed_in? %>
+    <span>
+        You are logged in as <%= current_admin.email %> - 
+    </span>
+      <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
+  <% else %>
+      <%= link_to 'Login', new_admin_session_path %>
+  <% end %>
+
+  <p>
+    <%= flash[:notice] %>
+  </p>
+
+  <p>
+      <%= flash[:error] %>
+  </p>
+
 <%= yield %>
 
 </body>

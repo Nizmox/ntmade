@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+  #requires Admin login to perform these functions
+  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :update]
+
   def index
     @articles = Article.all
   end
@@ -42,6 +45,8 @@ class ArticlesController < ApplicationController
   end
 
   protected #can't be routed to
+
+  #parameters allowed when creating or updating articles
   def permitted_params
     params.require(:article).permit(:title,:content,:caption)
   end

@@ -1,5 +1,6 @@
 Ntmade::Application.routes.draw do
 
+  devise_for :admins
   root 'home#index', :as => 'home'
 
   resources :articles
