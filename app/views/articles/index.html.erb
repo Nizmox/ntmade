@@ -6,9 +6,8 @@
 
 <% @articles.each do |article| %>
 <ul>
-  <li><b>Title: </b><%= article.title %></li>
-  <li><b>Content: </b><%= article.content %></li>
-  <li><b>Caption: </b><%= article.caption %></li>
+  <li><b>Title: </b><%= link_to article.title, article_path(article) %></li>
+  <li><b>Created: </b><%= article.created_at %></li>
   <li><b>Author: </b><%= article.admin.email %></li>
   <% if admin_signed_in? %>
     <li>
