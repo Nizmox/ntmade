@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Create a test admin use
-Admin.create({:email => 'nizmox@gmail.com', :password => 'test1234', :password_confirmation => 'test1234'})
+Admin.create({:email => 'test@test.com', :password => 'test1234', :password_confirmation => 'test1234'})
 
 #Create test articles
 Article.create(
@@ -16,19 +16,22 @@ Article.create(
                     :title => 'PAX Australia... unexpect the expected',
                     :content => 'test content',
                     :caption => 'PAX Aus 2013 was the first Penny Arcade Expo held outside of the USA. Go to the PAX website for more information on all Penny Arcade Expos.',
-                    :admin_id => Admin.all.where("email = 'nizmox@gmail.com'").first.id
+                    :admin_id => Admin.all.where("email = 'test@test.com'").first.id
                   },
                   {
                     :title => 'A Penny (Arcade Expo) for our Thoughts',
                     :content => 'test content',
                     :caption => 'PAX AUS 2013 is the first Penny Arcade Expo held outside of the USA. Go to the PAX website for more information on all Penny Arcade Expos.',
-                    :admin_id => Admin.all.where("email = 'nizmox@gmail.com'").first.id
+                    :admin_id => Admin.all.where("email = 'test@test.com'").first.id
                   },
                   {
                     :title => 'Oops... we\'ve won it again!',
                     :content => 'test content',
                     :caption => 'The Boardgames Australia awards were presented at the 2013 Toy and Game Expo, which was held at Sydney Olympic Park over the June long weekend. More information about the awards can be found on the BGA website.',
-                    :admin_id => Admin.all.where("email = 'nizmox@gmail.com'").first.id
+                    :admin_id => Admin.all.where("email = 'test@test.com'").first.id
                   }
                 ]
               )
+
+#Create test retailers
+#Retailer.create({:name => ''})
