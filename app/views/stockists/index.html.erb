@@ -1,0 +1,16 @@
+<h2>Here are our Stockists!</h2>
+
+<table border="1px">
+    <th>Name:</th>
+    <th>Region:</th>
+    <th>Locations:</th>
+  <% @stockists.each do |stock| %>
+    <tr>
+      <td><%= link_to stock.name, stock.link, :target => '_blank' %></td>
+      <td><%= stock.region %></td>
+      <td><%= stock.locations %></td>
+    </tr>
+  <% end %>
+</table><br>
+
+<%= link_to 'Back', home_path %>

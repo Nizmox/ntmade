@@ -34,4 +34,10 @@ Article.create(
               )
 
 #Create test retailers
-#Retailer.create({:name => ''})
+Stockist.create(
+                  {:name => 'Good Games',
+                   :link => 'http://www.goodgames.com.au',
+                   :region => 'NSW',
+                   :locations => 'Sydney, Burwood, Gosford, Newcastle, Wollongong'
+                  }
+                )
