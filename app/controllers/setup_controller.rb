@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class SetupController < ApplicationController
 
   #requires Admin login
   before_filter :authenticate_admin!

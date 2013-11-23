@@ -8,7 +8,9 @@ Ntmade::Application.routes.draw do
 
   resources :stockists, :only => [:index, :new, :create, :edit, :update, :destroy] #all except show
 
-  get 'admin' => 'admin#index', :as => 'admin'
+  resources :games
+
+  get 'setup' => 'setup#index', :as => 'setup'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

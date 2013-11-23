@@ -1,0 +1,18 @@
+<h2>Site Administration</h2>
+
+<h4>Your Details:</h4>
+<ul>
+  <li>Full Name: <%= current_admin.full_name %></li>
+  <li>Email: <%= current_admin.email %></li>
+</ul>
+
+<h4>Site Content:</h4>
+
+<p>To be added, will allow changing of page content in site</p>
+
+<h4>Add Content:</h4>
+<ul>
+  <li><%= link_to 'Create Article', new_article_path %></li>
+  <li><%= link_to 'Create Game', new_game_path %></li>
+  <li><%= link_to 'Create Stockist', new_stockist_path %></li>
+</ul>

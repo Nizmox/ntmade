@@ -1,0 +1,7 @@
+<h2>Our Games</h2>
+
+<% if admin_signed_in? %>
+  <%= link_to 'Create Game', new_game_path %>
+<% end %>
+
+<%= render @games %>
