@@ -8,7 +8,13 @@
 
 <h4>Site Content:</h4>
 
-<p>To be added, will allow changing of page content in site</p>
+<p>More to be added here, will allow changing of various page content across the site</p>
+
+<ul>
+  <% @contents.each do |content| %>
+    <li><%= content.name %> - <%= link_to 'show', content_path(content) %> - <%= link_to 'edit', edit_content_path(content) %></li>
+  <% end %>
+</ul>
 
 <h4>Add Content:</h4>
 <ul>

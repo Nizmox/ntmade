@@ -39,7 +39,7 @@
 
   <%= yield %>
 
-  <p>93 Made Pty Ltd © 2009-13. All Rights Reserved.  ABN 43 130 700 284 (ACN 130 700 284)  P: +61 2 9661 8231  E: <%= link_to 'info@93madegames.com.au', 'mailto:info@93madegames.com.au' %> <p>
+  <p><%= Content.where("name = 'Footer'").first.body %></p>
 
 </body>
 </html>

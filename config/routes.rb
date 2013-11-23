@@ -6,10 +6,14 @@ Ntmade::Application.routes.draw do
 
   resources :articles
 
-  resources :stockists, :only => [:index, :new, :create, :edit, :update, :destroy] #all except show
-
   resources :games
 
+  resources :stockists, :only => [:index, :new, :create, :edit, :update, :destroy] #all except show
+
+  #to store each text element on various pages
+  resources :contents, :only => [:show, :edit, :update]
+
+  #a page for admins to configure the site
   get 'setup' => 'setup#index', :as => 'setup'
 
   # The priority is based upon order of creation: first created -> highest priority.

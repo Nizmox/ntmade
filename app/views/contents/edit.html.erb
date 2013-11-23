@@ -1,0 +1,12 @@
+<h2>Your Content</h2>
+
+<h4><%= @content.name %></h4>
+
+<%= form_for @content do |f| %>
+<div>
+  <%= f.text_area :body %>
+</div>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', setup_path %>

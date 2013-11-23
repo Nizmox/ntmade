@@ -9,6 +9,9 @@
 #Create a test admin use
 Admin.create({:email => 'test@test.com', :full_name => 'Sean Carroll', :password => 'test1234', :password_confirmation => 'test1234'})
 
+#Seed required content
+Content.create(:name => 'Footer', :body => '93 Made Pty Ltd © 2009-13. All Rights Reserved. ABN 43 130 700 284 (ACN 130 700 284) P: +61 2 9661 8231 E: info@93madegames.com.au')
+
 #Create test articles
 Article.create(
                 [
