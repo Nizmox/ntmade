@@ -1,0 +1,29 @@
+<% if @stockist.errors.any? %>
+  <p>There were problems saving your stockist:</p>
+  <ul>
+    <% @stockist.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @stockist do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  Note: must be in the format http://xxx
+</div>
+<div>
+  <%= f.label :region %>
+  <%= f.text_field :region %>
+</div>
+<div>
+  <%= f.label :locations %>
+  <%= f.text_field :locations %>
+</div>
+<%= f.submit %>
+<% end %>

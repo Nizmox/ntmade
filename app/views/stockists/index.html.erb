@@ -1,14 +1,28 @@
 <h2>Here are our Stockists!</h2>
 
+<% if admin_signed_in? %>
+  <%= link_to 'Create Stockist', new_stockist_path %><br><br>
+<% end %>
+
 <table border="1px">
-    <th>Name:</th>
-    <th>Region:</th>
-    <th>Locations:</th>
+  <!-- column headings -->
+  <th>Name</th>  
+  <th>Region</th>
+  <th>Locations</th>
+  <% if admin_signed_in? %>
+    <th>Edit</th>
+    <th>Delete</th>
+  <% end %>
+  <!-- row data -->
   <% @stockists.each do |stock| %>
     <tr>
       <td><%= link_to stock.name, stock.link, :target => '_blank' %></td>
       <td><%= stock.region %></td>
       <td><%= stock.locations %></td>
+      <% if admin_signed_in? %>
+        <td><%= link_to 'edit', edit_stockist_path(stock) %></td>
+        <td><%= link_to 'delete', stockist_path(stock), :method => 'delete', :confirm => 'Are you sure?' %></td>
+      <% end %>
     </tr>
   <% end %>
 </table><br>
