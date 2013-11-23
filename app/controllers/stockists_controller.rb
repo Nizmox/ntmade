@@ -1,5 +1,8 @@
 class StockistsController < ApplicationController
 
+  #requires Admin login to perform these functions
+  before_filter :authenticate_admin!, :only => [:new, :create, :edit, :update, :destroy]
+
   def index
     @stockists = Stockist.all
   end

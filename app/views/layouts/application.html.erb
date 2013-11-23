@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ntmade</title>
+  <title>93 Made Games</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -14,8 +14,6 @@
         You are logged in as <%= current_admin.email %> - 
     </span>
       <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
-  <% else %>
-      <%= link_to 'Login', new_admin_session_path %>
   <% end %>
 
   <p>
@@ -26,7 +24,21 @@
       <%= flash[:error] %>
   </p>
 
-<%= yield %>
+  <h1>93 Made Games</h1>
+
+  <h3>Links</h3>
+  <ul>
+    <li><%= link_to 'Home', home_path %></li>
+    <li><%= link_to 'Articles', articles_path %></li>
+    <li><%= link_to 'Stockists', stockists_path %></li>
+    <% if admin_signed_in? %>
+      <li><%= link_to 'Admin', admin_path %>
+    <% end %>
+  </ul>
+
+  <%= yield %>
+
+  <p>93 Made Pty Ltd © 2009-13. All Rights Reserved.  ABN 43 130 700 284 (ACN 130 700 284)  P: +61 2 9661 8231  E: <%= link_to 'info@93madegames.com.au', 'mailto:info@93madegames.com.au' %> <p>
 
 </body>
 </html>
