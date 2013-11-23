@@ -8,7 +8,7 @@
 <ul>
   <li><b>Title: </b><%= link_to article.title, article_path(article) %></li>
   <li><b>Created: </b><%= article.created_at %></li>
-  <li><b>Author: </b><%= article.admin.email %></li>
+  <li><b>Author: </b><%= article.admin.full_name %></li>
   <% if admin_signed_in? %>
     <li>
       <b>Admin: </b>

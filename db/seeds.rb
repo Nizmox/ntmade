@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Create a test admin use
-Admin.create({:email => 'test@test.com', :password => 'test1234', :password_confirmation => 'test1234'})
+Admin.create({:email => 'test@test.com', :full_name => 'Sean Carroll', :password => 'test1234', :password_confirmation => 'test1234'})
 
 #Create test articles
 Article.create(
