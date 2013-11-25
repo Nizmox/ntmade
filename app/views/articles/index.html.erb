@@ -14,6 +14,8 @@
       <b>Admin: </b>
       <%= link_to 'edit', edit_article_path(article) %> / 
       <%= link_to 'delete', article_path(article), :method => 'delete' , :confirm => 'Are you sure?' %>
+      <%= button_to "edit", {:controller => :articles, :action => 'edit', :id => article.id}, :method => :get, :class => 'btn btn-primary btn-xs' %>
+      <%= button_to "delete", {:controller => :articles, :action => 'destroy', :id => article.id}, :method => :delete, :class => 'btn btn-danger btn-xs' %>
     </li>
   <% end %>
 </ul>

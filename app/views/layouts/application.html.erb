@@ -8,38 +8,53 @@
 </head>
 <body>
 
-  <!-- Added for Devise -->
-  <% if admin_signed_in? %>
-    <span>
-        You are logged in as <%= current_admin.email %> - 
-    </span>
-      <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
-  <% end %>
+  <!-- Added for Bootstrap -->
+  <div class="container">
 
-  <p>
-    <%= flash[:notice] %>
-  </p>
+    <div class="row">
+      <!-- Added for Devise -->
+      <% if admin_signed_in? %>
+        <span>
+            You are logged in as <%= current_admin.email %> - 
+        </span>
+          <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
+      <% end %>
 
-  <p>
-      <%= flash[:error] %>
-  </p>
+      <p>
+        <%= flash[:notice] %>
+      </p>
 
-  <h1>93 Made Games</h1>
+      <p>
+          <%= flash[:error] %>
+      </p>
+    </div>
 
-  <h3>Links</h3>
-  <ul>
-    <li><%= link_to 'Home', home_path %></li>
-    <li><%= link_to 'Articles', articles_path %></li>
-    <li><%= link_to 'Our Games', games_path %></li>
-    <li><%= link_to 'Stockists', stockists_path %></li>
-    <% if admin_signed_in? %>
-      <li><%= link_to 'Setup', setup_path %>
-    <% end %>
-  </ul>
+    <div class="row">
+      <h1>93 Made Games</h1>
+    </div>
 
-  <%= yield %>
+    <div class="row">
+      <!-- <h3>Links</h3> -->
+      <ul class="nav nav-tabs">
+        <li class="active"><%= link_to 'Home', home_path %></li>
+        <li><%= link_to 'Articles', articles_path %></li>
+        <li><%= link_to 'Our Games', games_path %></li>
+        <li><%= link_to 'Stockists', stockists_path %></li>
+        <% if admin_signed_in? %>
+          <li><%= link_to 'Setup', setup_path %>
+        <% end %>
+      </ul>
+    </div>
 
-  <p><%= Content.where("name = 'Footer'").first.body %></p>
+    <div class="row">
+      <%= yield %>
+    </div>
+
+    <div class="row">
+      <p><%= Content.where("name = 'Footer'").first.body %></p>
+    </div>
+
+  </div>
 
 </body>
 </html>

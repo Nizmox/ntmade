@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#for markdown to html conversion
+#gem 'redcarpet'
+
 #production database
 group :development do
   gem 'sqlite3'
@@ -13,6 +16,8 @@ end
 
 # Adding devise authentication
 gem 'devise'
+
+##############################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
