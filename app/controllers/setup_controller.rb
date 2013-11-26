@@ -4,7 +4,7 @@ class SetupController < ApplicationController
   before_filter :authenticate_admin!
 
   def index
-    @contents = Content.all
+    @contents = Content.order(:name).all
   end
 
 end

@@ -10,6 +10,7 @@
 Admin.create({:email => 'test@test.com', :full_name => 'Sean Carroll', :password => 'test1234', :password_confirmation => 'test1234'})
 
 #Seed required content
+Content.create(:name => 'Body', :body => '93 Made Games is an Australian game design and publishing company. In fact, 93 Made Games is the only company in Australia that develops and produces its own card games and board games all of the way from the concept stage through to, and including, distribution and marketing. The company even has an in-house art department with artists and graphic designers. Like most game publishers, the only thing that 93 Made Games truly out-sources is the manufacturing of its games.')
 Content.create(:name => 'Footer', :body => '93 Made Pty Ltd © 2009-13. All Rights Reserved. ABN 43 130 700 284 (ACN 130 700 284) P: +61 2 9661 8231 E: info@93madegames.com.au')
 
 #Create test articles

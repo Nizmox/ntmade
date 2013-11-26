@@ -1,0 +1,13 @@
+body.home .nav-tabs li.home,
+body.articles .nav-tabs li.articles,
+body.games .nav-tabs li.games,
+body.stockists .nav-tabs li.stockists,
+body.setup .nav-tabs li.setup {
+  a, a:hover, a:focus {
+    color: #555555;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-bottom-color: transparent;
+  }  
+}
