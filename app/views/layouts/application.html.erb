@@ -14,20 +14,27 @@
     <div class="row">
       <!-- Added for Devise -->
       <p>
-      <% if admin_signed_in? %>
-          You are logged in as <%= current_admin.email %> - 
-          <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
-      <% end %>
-        <%= flash[:notice] %> <%= flash[:error] %>
+        <% if admin_signed_in? %>
+            You are logged in as <%= current_admin.email %> - 
+            <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
+        <% end %>
       </p>
+      <!-- Flash notice -->
+      <% if flash[:notice] %>
+          <div class="alert alert-success"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="alert alert-danger"><%= flash[:error] %></div>
+      <% end %>
     </div>
 
+    <!-- Page Header -->
     <div class="row">
       <h1>93 Made Games</h1>
     </div>
 
+    <!-- Page Navigation -->
     <div class="row">
-      <!-- <h3>Links</h3> -->
       <ul class="nav nav-tabs">
         <li class="home"><%= link_to 'Home', home_path %></li>
         <li class="articles"><%= link_to 'Articles', articles_path %></li>
@@ -41,11 +48,11 @@
 
     <div class="row">
       <%= yield %>
-    </div>
+    </div><br>
 
     <div class="row">
-      <p><%= @footer %></p>
-      <p style="font-size:11px">Site designed by Simon Taylor - 2013</p>
+      <p class="footer"><%= @footer %></p>
+      <p class='designer'>Site designed by Simon Taylor - 2013</p>
     </div>
 
   </div>

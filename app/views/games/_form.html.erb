@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 
-<%= form_for @game, :class => "form-horizontal", :html => {:role => 'form'} do |f| %>
+<%= form_for @game, :class => "form-horizontal" do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, :class => "form-control" %>

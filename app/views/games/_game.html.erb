@@ -1,6 +1,6 @@
 <ul>
   <li><b>Title: </b><%= game.name %></li>
-  <li><b>Description: </b><%= game.description %></li>
+  <li><%= markdown_to_html(game.description) %></li>
   <li><b>Status: </b><%= game.status %></li>
   <% if admin_signed_in? %>
     <li>

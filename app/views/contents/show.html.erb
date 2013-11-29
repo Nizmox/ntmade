@@ -1,6 +1,6 @@
 <h2>Your Content</h2>
 
 <h4><%= @content.name %></h4>
-<p><%= @content.body %><p>
+<p><%= markdown_to_html(@content.body) %><p>
 
 <%= link_to 'Back', setup_path %>

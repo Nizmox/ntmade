@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #for markdown to html conversion
-#gem 'redcarpet'
+gem 'kramdown'
 
 #production database
 group :development do
