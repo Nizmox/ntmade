@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 
-<%= form_for @article, :class => "form-horizontal", :html => {:role => 'form'} do |f| %>
+<%= form_for @article, :class => "form-horizontal" do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, :class => "form-control" %>
