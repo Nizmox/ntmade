@@ -12,13 +12,14 @@
 
 <ul>
   <% @contents.each do |content| %>
-    <li><%= content.name %> - <%= link_to 'show', content_path(content) %> - <%= link_to 'edit', edit_content_path(content) %></li>
+    <li>
+      <%= link_to content.name, content_path(content) %> - 
+      <%= link_to 'edit', edit_content_path(content), :class => 'btn btn-primary btn-xs' %>
+    </li>
   <% end %>
 </ul>
 
 <h4>Add Content:</h4>
-<ul>
-  <li><%= link_to 'Create Article', new_article_path %></li>
-  <li><%= link_to 'Create Game', new_game_path %></li>
-  <li><%= link_to 'Create Stockist', new_stockist_path %></li>
-</ul>
+<%= link_to 'Create Article +', new_article_path, :class => 'btn btn-success btn-sm' %>
+<%= link_to 'Create Game +', new_game_path, :class => 'btn btn-success btn-sm' %>
+<%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %>

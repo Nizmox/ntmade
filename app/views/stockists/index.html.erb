@@ -1,7 +1,7 @@
 <h2>Here are our Stockists!</h2>
 
 <% if admin_signed_in? %>
-  <%= link_to 'Create Stockist', new_stockist_path %><br><br>
+  <%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %><br><br>
 <% end %>
 
 <table class="table table-striped">
@@ -20,8 +20,8 @@
       <td><%= stock.region %></td>
       <td><%= stock.locations %></td>
       <% if admin_signed_in? %>
-        <td><%= link_to 'edit', edit_stockist_path(stock) %></td>
-        <td><%= link_to 'delete', stockist_path(stock), :method => 'delete', :confirm => 'Are you sure?' %></td>
+        <td><%= link_to 'edit', edit_stockist_path(stock), :class => 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'delete', stockist_path(stock), :method => 'delete', :class => 'btn btn-danger btn-xs', :confirm => 'Are you sure?' %></td>
       <% end %>
     </tr>
   <% end %>
