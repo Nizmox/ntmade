@@ -1,7 +1,9 @@
 <h2>Our Games</h2>
 
+<hr>
+
 <% if admin_signed_in? %>
-  <%= link_to 'Create Game', new_game_path %>
+  <%= link_to 'Create Game +', new_game_path, :class => 'btn btn-success btn-sm'  %>
 <% end %>
 
 <%= render @games %>

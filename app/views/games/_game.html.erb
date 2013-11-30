@@ -1,12 +1,14 @@
-<ul>
-  <li><b>Title: </b><%= game.name %></li>
-  <li><%= markdown_to_html(game.description) %></li>
+<ul class='no-bullet'>
+  <li><h3><%= game.name %></h3></li>
+  <li class='content'><%= markdown_to_html(game.description) %></li>
   <li><b>Status: </b><%= game.status %></li>
   <% if admin_signed_in? %>
     <li>
       <b>Admin: </b>
-      <%= link_to 'edit', edit_game_path(game) %> / 
-      <%= link_to 'delete', game_path(game), :method => 'delete' , :confirm => 'Are you sure?' %>
+      <%= link_to 'edit', edit_game_path(game), :class => 'btn btn-primary btn-xs' %> 
+      <%= link_to 'delete', game_path(game), :method => 'delete', :class => 'btn btn-danger btn-xs', :confirm => 'Are you sure?' %>
     </li>
   <% end %>
 </ul>
+
+<hr>

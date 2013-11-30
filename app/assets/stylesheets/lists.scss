@@ -10,3 +10,8 @@ li.caption {
   padding: 10px;
   border: 1px solid black;
 }
+
+li.content img {
+  max-width: 250px;
+  max-height: 250px;
+}

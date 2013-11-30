@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     @article = current_admin.articles.new(permitted_params)
 
     if @article.save 
-      redirect_to '/articles'
+      redirect_to article_path
     else
       render 'new'
     end
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(permitted_params)
-      redirect_to '/articles'
+      redirect_to article_path
     else
       render 'edit'
     end
