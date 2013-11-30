@@ -1,8 +1,10 @@
 <h2>Here are our Stockists!</h2>
 
 <% if admin_signed_in? %>
-  <%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %><br><br>
+  <%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %><br>
 <% end %>
+
+<p><%= markdown_to_html(@body) %></p>
 
 <table class="table table-striped">
   <!-- column headings -->

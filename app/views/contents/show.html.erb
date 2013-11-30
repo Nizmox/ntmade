@@ -1,6 +1,5 @@
 <h2>Your Content</h2>
 
-<h4><%= @content.name %></h4>
-<p><%= markdown_to_html(@content.body) %><p>
+<%= render @content %>
 
-<%= link_to 'Back', setup_path %>
+<%= link_to '< Back', setup_path, :class => 'btn btn-info btn-sm' %>

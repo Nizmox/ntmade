@@ -5,6 +5,8 @@ class StockistsController < ApplicationController
 
   def index
     @stockists = Stockist.all
+
+    @body = Content.where("name = 'Stockist'").first.body
   end
 
   def new

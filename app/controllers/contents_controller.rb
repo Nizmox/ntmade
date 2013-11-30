@@ -3,6 +3,20 @@ class ContentsController < ApplicationController
   #requires Admin login
   before_filter :authenticate_admin!
 
+  def new
+    @content = Content.new
+  end
+
+  def create
+    @content = Content.new(permitted_params)
+    @content.content_type = "About Us"
+    if @content.save
+      redirect_to content_path(@content)
+    else
+      render 'new'
+    end
+  end
+
   def show
     @content = Content.find(params[:id])
   end

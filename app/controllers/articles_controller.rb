@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_admin!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order('created_at DESC')
   end
 
   def show
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     @article = current_admin.articles.new(permitted_params)
 
     if @article.save 
-      redirect_to article_path
+      redirect_to article_path(@article)
     else
       render 'new'
     end
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(permitted_params)
-      redirect_to article_path
+      redirect_to article_path(@article)
     else
       render 'edit'
     end

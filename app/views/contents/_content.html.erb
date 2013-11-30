@@ -1,0 +1,9 @@
+<ul class="no-bullet">
+  <li><h3><%= content.name %></h3></li>
+  <li><p><%= markdown_to_html(content.body) %><p></li>
+  <li>
+    <b>Admin: </b>
+    <%= link_to 'edit', edit_content_path(content), :class => 'btn btn-primary btn-xs' %> 
+    <%= link_to 'delete', content_path(content), :method => 'delete', :class => 'btn btn-danger btn-xs', :confirm => 'Are you sure?' %>
+  </li>
+</ul>

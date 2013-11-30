@@ -40,6 +40,7 @@
         <li class="articles"><%= link_to 'Articles', articles_path %></li>
         <li class="games"><%= link_to 'Our Games', games_path %></li>
         <li class="stockists"><%= link_to 'Stockists', stockists_path %></li>
+        <li class="about"><%= link_to 'About Us', about_path %></li>
         <% if admin_signed_in? %>
           <li class="setup"><%= link_to 'Setup', setup_path %>
         <% end %>
@@ -53,7 +54,7 @@
 
     <!-- Page Footer -->
     <div class="row">
-      <p class="footer"><%= @footer %></p>
+      <div class="footer"><%= markdown_to_html(@footer) %></div>
       <p class='designer'>Site designed by Simon Taylor - 2013</p>
     </div>
 

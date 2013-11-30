@@ -1,0 +1,5 @@
+<% if admin_signed_in? %>
+  <br><%= link_to 'Create Content +', new_content_path, :class => 'btn btn-success btn-sm'  %>
+<% end %>
+
+<%= render @contents %>
