@@ -9,7 +9,7 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.new(permitted_params)
-    @content.content_type = "About Us"
+    # @content.content_type = "About Us"
     if @content.save
       redirect_to content_path(@content)
     else
@@ -44,7 +44,7 @@ class ContentsController < ApplicationController
 
   protected
   def permitted_params
-    params.require(:content).permit(:name,:body)
+    params.require(:content).permit(:name,:body,:content_type)
   end
 
 end

@@ -2,8 +2,8 @@
 
 <h4>Your Details:</h4>
 <ul>
-  <li>Full Name: <%= current_admin.full_name %></li>
-  <li>Email: <%= current_admin.email %></li>
+  <li><b>Full Name:</b> <%= current_admin.full_name %></li>
+  <li><b>Email:</b> <%= current_admin.email %></li>
 </ul>
 
 <h4>Site Content:</h4>
@@ -23,4 +23,4 @@
 <%= link_to 'Create Article +', new_article_path, :class => 'btn btn-success btn-sm' %>
 <%= link_to 'Create Game +', new_game_path, :class => 'btn btn-success btn-sm' %>
 <%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %>
-<%= link_to 'Create Content (About Us) +', new_content_path, :class => 'btn btn-success btn-sm' %> 
+<%= link_to 'Create Content +', new_content_path, :class => 'btn btn-success btn-sm' %> 

@@ -10,15 +10,22 @@
   </div>
 <% end %>
 <!-- Form -->
-<%= form_for @content, :class => "form-horizontal", :html => {:role => 'form'}  do |f| %>
+<%= form_for @content, :class => "form-horizontal"  do |f| %>
+<!-- if this is Static content, and we're editing, we cannot change the Name or Content type -->
 <% if params[:action] == 'edit' && @content.content_type == 'Static' %>
   <h3><%= f.label @content.name %></h3>
 <% else %>
+<!-- It's not Static content so allow Name and Content Type to be changed. -->
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, :class => "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :content_type %>
+    <%= f.select :content_type, ['About Us','Legal'], {}, :class =>"form-control" %>
+  </div>
 <% end %>
+<!-- End of if -->
 <div class="form-group">
   <%= f.label :body.to_s + ' (with Kramdown styling)' %>
   <%= f.text_area :body, :class => "form-control", :rows => 10 %>

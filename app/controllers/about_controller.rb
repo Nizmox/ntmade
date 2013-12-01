@@ -1,7 +1,8 @@
 class AboutController < ApplicationController
 
   def index
-    @contents = Content.where("content_type = 'About Us'").order(:name).all
+    @about = Content.where("content_type = 'About Us'").order(:name).all
+    @legal = Content.where("content_type = 'Legal'").order(:name).all
   end
 
 end
