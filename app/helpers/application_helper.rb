@@ -7,4 +7,9 @@ module ApplicationHelper
   def strip_markdown text
     strip_tags(Kramdown::Document.new(text).to_html) #.html_safe
   end
+
+  def active text
+    'active' if controller_name == text
+  end
+
 end

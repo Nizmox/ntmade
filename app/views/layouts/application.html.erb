@@ -8,55 +8,75 @@
 </head>
 <body class="<%= controller_name %>">
 
-  <div>
-    <!-- Added for Devise -->
-    <% if admin_signed_in? %>
-      <p>
-        You are logged in as <%= current_admin.email %> - 
-        <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
-      </p>
-    <% end %>
-    <!-- Flash notice -->
-    <% if flash[:notice] %>
-        <div class="alert alert-success"><%= flash[:notice] %></div>
-    <% end %>
-    <% if flash[:error] %>
-      <div class="alert alert-danger"><%= flash[:error] %></div>
-    <% end %>
-  </div>
-
-  <!-- Page Header (Banner) -->
-  <div class="banner">
-    <h1>93 Made Games</h1>
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to '93 Made Games', home_path, :class => "navbar-brand" %>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <!-- Navbar links start -->
+          <li class="<%= active 'home' %>"><%= link_to 'Home', home_path %></li>
+          <li class="<%= active 'articles' %>"><%= link_to 'Articles', articles_path %></li>
+          <!-- Games Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Games <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'All Games', games_path %></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Specific Game...</li>
+              <% @games_to_link.each do |gl| %>
+                <li><%= link_to gl.name, game_path(gl) %></li>
+              <% end %>
+            </ul>
+          </li>
+          <!-- End of Games Dropdown -->
+          <li class="<%= active 'stockists' %>"><%= link_to 'Stockists', stockists_path %></li>
+          <li class="<%= active 'about' %>"><%= link_to 'About Us', about_path %></li>
+          <% if admin_signed_in? %>
+            <li class="<%= active 'setup' %>"><%= link_to 'Setup', setup_path %>
+          <% end %>
+          <!-- Navbar links end -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if admin_signed_in? %>
+            <li><a style="color: #ffffff">You are logged in as <%= current_admin.email %></a></li>
+            <li><%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %></li>
+          <% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
   </div>
 
   <!-- Added for Bootstrap -->
   <div class="container">
 
-    <!-- Page Navigation -->
-    <div class="row">
-      <ul class="nav nav-tabs">
-        <li class="home"><%= link_to 'Home', home_path %></li>
-        <li class="articles"><%= link_to 'Articles', articles_path %></li>
-        <li class="games"><%= link_to 'Our Games', games_path %></li>
-        <li class="stockists"><%= link_to 'Stockists', stockists_path %></li>
-        <li class="about"><%= link_to 'About Us', about_path %></li>
-        <% if admin_signed_in? %>
-          <li class="setup"><%= link_to 'Setup', setup_path %>
-        <% end %>
-      </ul>
-    </div>
-
     <!-- Page Content -->
     <div class="row">
+      <!-- Flash notice/error -->
+      <% if flash[:notice] %>
+          <div class="alert alert-success"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="alert alert-danger"><%= flash[:error] %></div>
+      <% end %>
+
+      <!-- Body -->
       <%= yield %>
-    </div><br>
+    </div>
 
     <!-- Page Footer -->
-    <div class="row">
-      <div class="footer"><%= markdown_to_html(@footer) %></div>
-      <p class='designer'>Site designed by Simon Taylor - 2013</p>
-    </div>
+  <div class="row">
+    <div class="footer"><%= markdown_to_html(@footer) %></div>
+    <p class='designer'>Site designed by Simon Taylor - 2013</p>
+  </div>
 
   </div>
 
