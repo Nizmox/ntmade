@@ -10,13 +10,14 @@ Ntmade::Application.routes.draw do
 
   resources :stockists, :only => [:index, :new, :create, :edit, :update, :destroy] #all except show
 
+  #a page displaying 'content' about 93 made games
   get 'about' => 'about#index', :as => 'about'
 
   #a page for admins to configure the site
   get 'setup' => 'setup#index', :as => 'setup'
 
   #to store each text element on various pages
-  resources :contents, :only => [:new, :create, :show, :edit, :update]
+  resources :contents, :only => [:new, :create, :show, :edit, :update, :destroy] #all except index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

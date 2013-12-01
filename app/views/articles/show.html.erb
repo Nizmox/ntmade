@@ -1,18 +1,3 @@
-<!-- <h2>View your article</h2> -->
+<%= render @article %>
 
-<ul class='no-bullet'>
-  <li><h3><%= @article.title %></h3>
-  <li><b>Created: </b><%= @article.created_at.strftime('%d-%b-%Y %k:%M %P') %></li>
-  <li><%= markdown_to_html(@article.content) %></li>
-  <li class='caption'><%= @article.caption %></li>
-  <li><b>Author: </b><%= @article.admin.full_name %></li>
-  <% if admin_signed_in? %>
-    <li>
-      <b>Admin: </b>
-      <%= link_to 'edit', edit_article_path(@article), :class => 'btn btn-warning btn-xs' %>
-      <%= link_to 'delete', article_path(@article), :method => 'delete', :class => 'btn btn-danger btn-xs', :confirm => 'Are you sure?' %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to '< Back', articles_path, :class => 'btn btn-info btn-sm' %>
+<%= link_to 'Back', articles_path, :class => 'btn btn-info btn-sm' %>

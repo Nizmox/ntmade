@@ -3,7 +3,9 @@ class Admin < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
          #:registerable, #do not allow user signups
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         #enable devise timeouts
+         :timeoutable, :timeout_in => 15.minutes
 
   #an admin can create many articles
   has_many :articles

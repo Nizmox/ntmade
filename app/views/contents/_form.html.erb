@@ -1,12 +1,15 @@
+<!-- Show errors on invalid form data -->
 <% if @content.errors.any? %>
-  <p>There were problems saving your content:</p>
-  <ul>
-    <% @content.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+  <div class="alert alert-danger">
+    <p><b>Error:</b> Your Content could not be saved:</p>
+    <ul>
+      <% @content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-  </ul>
+    </ul>
+  </div>
 <% end %>
-
+<!-- Form -->
 <%= form_for @content, :class => "form-horizontal", :html => {:role => 'form'}  do |f| %>
 <% if params[:action] == 'edit' && @content.content_type == 'Static' %>
   <h3><%= f.label @content.name %></h3>
@@ -17,8 +20,10 @@
   </div>
 <% end %>
 <div class="form-group">
-  <%= f.label :body %>
+  <%= f.label :body.to_s + ' (with Kramdown styling)' %>
   <%= f.text_area :body, :class => "form-control", :rows => 10 %>
 </div>
   <%= f.submit :class => "btn btn-default" %>
 <% end %><br>
+
+<%= link_to 'Kramdown Syntax Reference', 'http://kramdown.gettalong.org/syntax.html', :target => '_blank' %> - A guide on how to style this content.<br><br>

@@ -8,30 +8,30 @@
 </head>
 <body class="<%= controller_name %>">
 
+  <div>
+    <!-- Added for Devise -->
+    <% if admin_signed_in? %>
+      <p>
+        You are logged in as <%= current_admin.email %> - 
+        <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
+      </p>
+    <% end %>
+    <!-- Flash notice -->
+    <% if flash[:notice] %>
+        <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:error] %>
+      <div class="alert alert-danger"><%= flash[:error] %></div>
+    <% end %>
+  </div>
+
+  <!-- Page Header (Banner) -->
+  <div class="banner">
+    <h1>93 Made Games</h1>
+  </div>
+
   <!-- Added for Bootstrap -->
   <div class="container">
-
-    <div class="row">
-      <!-- Added for Devise -->
-      <p>
-        <% if admin_signed_in? %>
-            You are logged in as <%= current_admin.email %> - 
-            <%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %>
-        <% end %>
-      </p>
-      <!-- Flash notice -->
-      <% if flash[:notice] %>
-          <div class="alert alert-success"><%= flash[:notice] %></div>
-      <% end %>
-      <% if flash[:error] %>
-        <div class="alert alert-danger"><%= flash[:error] %></div>
-      <% end %>
-    </div>
-
-    <!-- Page Header (Banner) -->
-    <div class="row">
-      <h1>93 Made Games</h1>
-    </div>
 
     <!-- Page Navigation -->
     <div class="row">

@@ -1,12 +1,15 @@
+<!-- Show errors on invalid form data -->
 <% if @stockist.errors.any? %>
-  <p>There were problems saving your stockist:</p>
-  <ul>
-    <% @stockist.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+  <div class="alert alert-danger">
+    <p><b>Error:</b> Your Article could not be saved:</p>
+    <ul>
+      <% @stockist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-  </ul>
+    </ul>
+  </div>
 <% end %>
-
+<!-- Form -->
 <%= form_for @stockist, :class => "form-horizontal", :html => {:role => 'form'} do |f| %>
 <div class="form-group">
   <%= f.label :name %>
@@ -15,7 +18,7 @@
 <div class="form-group">
   <%= f.label :link %>
   <%= f.text_field :link, :class => "form-control" %>
-  Note: must be in the format http://xxx
+  <p>Note: must be in the format http://xxx</p>
 </div>
 <div class="form-group">
   <%= f.label :region %>
@@ -27,3 +30,5 @@
 </div>
 <%= f.submit :class => "btn btn-default" %>
 <% end %><br>
+<!-- Navigate back with warning -->
+<%= link_to 'Back', stockists_path, :class => 'btn btn-info btn-sm', :confirm => 'Are you sure you wish to go back? Any changes you have made since you last saved will be lost.' %>
