@@ -10,7 +10,7 @@
 Admin.create({:email => "test@test.com", :full_name => "Sean Carroll", :password => "test1234", :password_confirmation => "test1234"})
 
 #Seed required content
-Content.create(:name => "Homepage", :content_type => "Static" :body => "NEEDS UPDATE")
+Content.create(:name => "Homepage", :content_type => "Static", :body => "NEEDS UPDATE")
 Content.create(:name => "Footer", :content_type => "Static", :body => "93 Made Pty Ltd © 2009-13. All Rights Reserved. ABN 43 130 700 284 (ACN 130 700 284) P: +61 2 9661 8231 E: info@93madegames.com.au")
 Content.create(:name => "Stockist", :content_type => "Static", :body => "Our games are sold in stores throughout the globe and online. Please see below for the store closest to you. If your local stockist is not listed below or you think our games would be perfect additions to your store then let us know at <info@93madegames.com.au>. If you are a current or prospective stockist then check out some of your benefits.")
 
