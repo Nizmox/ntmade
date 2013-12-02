@@ -45,12 +45,13 @@
           <% end %>
           <!-- Navbar links end -->
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <% if admin_signed_in? %>
-            <li><a style="color: #ffffff">You are logged in as <%= current_admin.email %></a></li>
+        <% if admin_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><p class="navbar-text" style="color: #ffffff">You are logged in as <%= current_admin.email %></p></li>
+            <!-- <li><a style="color: #ffffff">You are logged in as <%= current_admin.email %></a></li> -->
             <li><%= link_to 'Logout', destroy_admin_session_path, :method => 'delete' %></li>
-          <% end %>
-        </ul>
+          </ul>
+        <% end %>
       </div><!--/.nav-collapse -->
     </div>
   </div>
