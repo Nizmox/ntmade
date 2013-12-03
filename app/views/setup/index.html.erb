@@ -8,19 +8,19 @@
 
 <h4>Site Content:</h4>
 
-<p>More to be added here, will allow changing of various page content across the site</p>
+<p>This facilitates changes to the 'Static' content in various areas of the site.</p>
 
-<ul>
+<table>
   <% @contents.each do |content| %>
-    <li>
-      <%= link_to content.name, content_path(content) %> - 
-      <%= link_to 'edit', edit_content_path(content), :class => 'btn btn-primary btn-xs' %>
-    </li>
+    <tr>
+      <td><%= link_to content.name, content_path(content) %><td>
+      <td>&nbsp;&nbsp;&nbsp;<%= link_to 'edit', edit_content_path(content), :class => 'btn btn-primary btn-xs' %><td>
+    </tr>
   <% end %>
-</ul>
+<table>
 
 <h4>Add Content:</h4>
-<%= link_to 'Create Article +', new_article_path, :class => 'btn btn-success btn-sm' %>
-<%= link_to 'Create Game +', new_game_path, :class => 'btn btn-success btn-sm' %>
-<%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %>
+<%= link_to 'Create Article +', new_article_path, :class => 'btn btn-success btn-sm' %>&nbsp;
+<%= link_to 'Create Game +', new_game_path, :class => 'btn btn-success btn-sm' %>&nbsp;
+<%= link_to 'Create Stockist +', new_stockist_path, :class => 'btn btn-success btn-sm' %>&nbsp;
 <%= link_to 'Create Content +', new_content_path, :class => 'btn btn-success btn-sm' %> 
