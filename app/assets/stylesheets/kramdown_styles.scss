@@ -1,0 +1,38 @@
+/* Table Styles */ 
+
+  /* Image with Caption */
+  .img-caption {
+    margin: auto;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .img-caption td {
+    padding-top: 5px;
+    font-size: 12px;
+  }
+
+  /* Games Preview */
+  .games-preview td {
+    padding: 5px;
+  }
+
+/* Image Styles */
+
+  /* Small */
+  .img-small {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  /* Medium */
+  .img-medium {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  /* Large */
+  .img-large {
+    max-width: 600px;
+    max-height: 600px;
+  }

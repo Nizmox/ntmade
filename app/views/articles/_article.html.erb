@@ -4,15 +4,20 @@
   <!-- Creation Time -->
   <li><b>Created: </b><%= article.created_at.strftime('%d-%b-%Y %k:%M %P') %></li>
   <!-- Body Text -->
-  <li class='content'>
     <!-- if displayed in Index action -->
     <% if params[:action] == 'index' %>
-      <%= truncate(strip_markdown(article.content), :length => 500, :separator => ' ') {link_to ' show more', article_path(article)} %>
+      <li>
+        <%= truncate(strip_markdown(article.content), :length => 500, :separator => ' ') {link_to ' show more', article_path(article)} %>
+      </li>
     <!-- if displayed in other action (i.e. Show) -->
     <% else %>
-      <%= markdown_to_html(@article.content) %>
-    <% end %>
-  </li>
+      <li>
+        <%= markdown_to_html(@article.content) %>
+      </li>
+      <li class='caption'>
+        <%= @article.caption %>
+      </li><br>
+    <% end %>  
   <!-- Author -->
   <li><b>Author: </b><%= article.admin.full_name %></li>
   <!-- Admin Options -->

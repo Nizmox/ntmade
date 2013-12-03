@@ -1,18 +1,15 @@
+/* Remove bullets from styling */
 ul.no-bullet {
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
 }
 
+/* Define Caption styling at the bottom of Articles */
 li.caption {
   background-color: #ADEBFF;
   font-style: italic;
   padding: 10px;
   border: 1px solid black;
   text-align: center;
-}
-
-li.content img {
-  max-width: 250px;
-  max-height: 250px;
 }
