@@ -62,4 +62,10 @@ Due to time constraings these are the features I wanted to deliver but could not
 * Games show method should be tied to the game name (rather than just id). This should be used for linking.
 * Games section should be sortable.
 * Add Pagination to Articles.
+
+Minor Changes:-
+
 * Caption in Articles should not be visible if there is no caption.
+* Add link to reset password from setup page
+* Style forgot password
+* Change field size for email and password
