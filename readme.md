@@ -54,6 +54,8 @@ Due to time constraings these are the features I wanted to deliver but could not
 
 * Company Branding. New site needs much more in the way of logos / pictures / videos.
 * Shop Front. Need to reimplement the pictures and paypal links.
+* File Uploads
+* Tournament Rankings
 
 ####Features I wanted to add...
 
@@ -62,6 +64,7 @@ Due to time constraings these are the features I wanted to deliver but could not
 * Games show method should be tied to the game name (rather than just id). This should be used for linking.
 * Games section should be sortable.
 * Add Pagination to Articles.
+* Mobile Device Scaling
 
 Minor Changes:-
 
